@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito Sans");
+@mixin transition() {
+  transition: 0.8s;
+}
+.main-countrie {
+  width: 100%;
+  height: auto;
+  min-height: 85vh;
+  background-color: var(--bg-primary);
+  @include transition();
+  .container {
+    padding-right: 0;
+  }
+}
+
+.countries-head {
+  width: 100%;
+  height: 102px;
+  line-height: 102px;;
+  .span-back{
+    color: var(--infos-text);
+    cursor: pointer;
+    font-family: Nunito Sans;
+    font-weight: 400;
+    font-size: 16px;
+    @include transition();
+    .arrow-icon {
+      margin: 0 16px 0 0;
+    }
+  }
+}
+
+.countries-body {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.figure {
+  img {
+    width: 100%;
+    height: 296px;
+    border-radius: 2px;
+  }
+}
+
+.infos {
+  color: var(--infos-text);
+  font-family: Nunito Sans;
+  @include transition();
+  .title {
+    font-family: Nunito Sans;
+    font-size: 32px;
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .data {
+    list-style: none;
+    height: 4vh;
+  }
+  .countrie-border {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 3vh;
+  }
+  .item {
+    padding: 0;
+    margin: 0;
+    margin-top: 1%;
+    font-size: 16px;
+    font-weight: 600;
+    .countrie-info {
+      font-weight: 200;
+    }
+  }
+  .border-items {
+    justify-content: initial;
+    text-align: center;
+  }
+
+  .btn-border {
+    cursor: pointer;
+    height: fit-content;
+    margin-left: 1%;
+    border: 1px solid var(--infos-text);
+    padding: 0 1%;
+    color: var(--infos-text);
+    display: block;
+    width: 32%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 1.5%;
+    @include transition();
+    &:hover {
+      border: 1px solid var(--infos-text-hover);
+      color: var(--infos-text-hover);
+      background: var(--infos-text-bg-hover);
+      text-decoration: none;
+    }
+  }
+}
+
+.thumb-country {
+  width: 23%;
+  height: auto;
+  background-color: var(--bg-secondary);
+  margin-top: 43px;
+  color: var(--infos-text);
+  font-family: Nunito Sans;
+  line-height: 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.8s;
+
+  P {
+    line-height: 18px;
+    font-weight: bold;
+    span {
+      font-weight: 200;
+    }
+  }
+  .countrie-name {
+    font-weight: 800;
+  }
+  img {
+    width: 100%;
+    height: 153px;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (max-device-width: 375px) {
+  .main-countrie {
+    .container{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .countries-head {
+    padding-left: 15px;
+    height: 80px;
+    line-height: 80px;
+    .span-back {
+      font-size: 12pt;
+    }
+  }
+
+  .countries-body {
+    margin: 0;
+    padding: 0;
+    display: block;
+    .figure {
+      max-width: 100%;
+      padding: 0;
+      img {
+        width: 100%;
+        height: 268px;
+      }
+    }
+
+    .infos {
+      display: block;
+      max-width: 100%;
+      margin: 0;
+      padding: 17px;
+      .title {
+        font-size: 32pt;
+        margin-bottom: 0.4rem;
+      }
+      ul {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .data {
+        height: 24pt;
+        line-height: 24pt;
+        margin-bottom: 0.1rem;
+      }
+
+      .countrie-border{
+        display: block;
+        .item {
+          width: 100%;
+          max-width: 100%;
+        }
+        .border-items {
+          width: 100%;
+          max-width: 100%;
+          padding-top: 0.2rem;
+          .btn-border {
+            width: 32%;
+            max-width: 32%;
+          }
+        }
+      }
+    }
+  }
+}
+
+

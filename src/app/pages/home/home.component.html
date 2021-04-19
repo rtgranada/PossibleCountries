@@ -1,0 +1,38 @@
+<div class="main-home">
+  <div class="container">
+    <div class="countries-head">
+      <div class="form-group search-input">
+        <input type="search"  [(ngModel)]="search" class="search form-control form-control-placeholdericon" placeholder="&#xF002;   Search for a country...">
+      </div>
+
+      <div class="dropdown region-filter">
+        <button class="btn btn-secondary dropdown-toggle btn-region" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="span-filter"> {{ filter }} <fa-icon class="arrow-icon" [icon]="faArrow"></fa-icon></span>
+        </button>
+        <div class="dropdown-menu">
+          <button class="dropdown-item" (click)="addFilter('all')">All</button>
+          <div *ngFor="let region of regions">
+            <button class="dropdown-item" (click)="addFilter(region.name)">{{ region.name }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="countries-body">
+      <div *ngFor="let countrie of (countries | filter:search)as folder" class="thumb-country" (click)="goPage(countrie.name)">
+        <figure>
+          <img src="{{countrie.flag}}" alt="{{countrie.name}}" >
+        </figure>
+        <div class="container">
+          <h4 class="countrie-name">{{countrie.name}}</h4>
+          <p>Population: <span class="results"> {{countrie.population | mask: 'separator.3':'.'}} </span></p>
+          <p>Region: <span class="results"> {{countrie.region}} </span></p>
+          <p>Capital: <span class="results"> {{countrie.capital}} </span></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="(!countries | filter:search)">
+      <span class="no-results">Nenhum páis encontrado!</span>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+@mixin transition() {
+  transition: 0.5s;
+}
+.main-home {
+  width: 100%;
+  height: auto;
+  min-height: 85vh;
+  background-color: var(--bg-primary);
+  @include transition();
+}
+
+.countries-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 0 0;
+  .search-input{
+    width: 35%;
+    .search {
+      height: 48px;
+      border-radius: 0px;
+      border: solid 1px var(--search-input-border);
+      background-color: var(--bg-secondary);
+      @include transition();
+    }
+  }
+  .form-control {
+    font-family: FontAwesome;
+  }
+  .form-control-placeholdericon {
+    font-family: Roboto, FontAwesome;
+  }
+  .region-filter {
+    float: right;
+    width: 23%;
+    .dropdown-toggle::after {
+      display: none;
+    }
+
+    .dropdown-menu.show {
+      width: 100%;
+      background-color: var(--bg-secondary);
+      @include transition();
+      .dropdown-item {
+        color: var(--infos-text);
+        font-family: Nunito Sans;
+        &:hover {
+          color: var(--bg-secondary);
+        }
+      }
+    }
+    .arrow-icon {
+      margin-right: 5%;
+      float: right;
+    }
+
+    .btn-region {
+      width: 100%;
+      height: 48px;
+      border-radius: 0;
+      border: solid 1px var(--search-input-border);
+      background-color: var(--bg-secondary);
+      color: var(--infos-text);
+      font-family: Nunito Sans;
+      line-height: 18px;
+      text-align: left;
+      @include transition();
+    }
+  }
+}
+
+.show  {
+  .arrow-icon {
+    @include transition();
+    transform: rotate(180deg);
+  }
+}
+
+.countries-body {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thumb-country {
+  width: 23%;
+  height: auto;
+  background-color: var(--bg-secondary);
+  margin-top: 43px;
+  color: var(--infos-text);
+  font-family: Nunito Sans;
+  line-height: 18px;
+  text-align: left;
+  cursor: pointer;
+  @include transition();
+  P {
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    span {
+      font-weight: 200;
+    }
+  }
+  .countrie-name {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  img {
+    width: 100%;
+    height: 153px;
+    border-radius: 2px;
+  }
+}
+
+.no-results {
+  @include transition();
+  color: var(--infos-text);
+}
+
+@media screen and (max-device-width: 375px) {
+  .countries-head {
+    width: 100%;
+    display: block;
+    justify-content: space-between;
+    padding: 40px 0 0 0;
+    .search-input{
+      width: 100%;
+      min-width: 100%;
+    }
+    .region-filter{
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  .thumb-country {
+    width: 100%;
+    margin-top: 16px;
+
+    .countrie-name {
+      line-height: 24pt;
+      font-size: 16pt;
+      font-family: Nunito Sans;
+    }
+    p {
+      line-height: 18pt;
+      font-size: 12pt;
+    }
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 2px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito Sans");
+
+@mixin transition() {
+  transition: 0.5s;
+}
+
+header {
+  width: 100%;
+  height: 15vh;
+  max-height: 15vh;
+  line-height: 15vh;
+  text-align: justify;
+}
+
+.main-header {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px 0 var(--bg-main-header-shadow);
+  @include transition();
+}
+
+.where-in-the-world {
+  color: var(--title-text);
+  font-family: Nunito Sans;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: left;
+  @include transition();
+}
+
+.dark-mode {
+  color: var(--title-text);
+  font-family: Nunito Sans;
+  font-weight: 400;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+  @include transition();
+
+}
+
+.moon-icon {
+  margin: 0 16px 0 0;
+}
+
+@media screen and (max-device-width: 375px) {
+  header {
+    line-height: 65pt;
+  }
+  .main-header{
+    height: 65pt;
+    .where-in-the-world {
+      font-size: 13pt;
+    }
+    .dark-mode {
+      font-weight: 400;
+      font-size: 13pt;
+    }
+  }
+}

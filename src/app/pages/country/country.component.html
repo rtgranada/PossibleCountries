@@ -1,0 +1,53 @@
+<div class="main-countrie">
+  <div class="container">
+
+    <div class="countries-head">
+      <span (click)="back()" class="span-back"><fa-icon class="arrow-icon" [icon]="faArrowLeft"></fa-icon>Back</span>
+    </div>
+    <div class="row countries-body" *ngFor="let countrie of objCountry">
+      <div class="col-5 figure">
+        <figure>
+          <img src="{{countrie.flag}}" alt="{{countrie.name}}" >
+        </figure>
+      </div>
+
+      <div class="row col-7 infos">
+        <h1 class="title">{{ countrie.name }}</h1>
+        <ul class="col-6">
+          <li class="data">
+            <span class="item">Native Name: <span class="countrie-info"> {{countrie.nativeName}} </span></span>
+          </li>
+          <li class="data">
+            <span class="item">Population: <span class="countrie-info" > {{countrie.population | mask: 'separator.3':'.' }} </span></span>
+          </li>
+          <li class="data">
+            <span class="item">Region: <span class="countrie-info"> {{countrie.region}} </span></span>
+          </li>
+          <li class="data">
+            <span class="item">Sub Region: <span class="countrie-info"> {{countrie.subregion}} </span></span>
+          </li>
+          <li class="data">
+            <span class="item">Capital: <span class="countrie-info"> {{countrie.capital}} </span></span>
+          </li>
+        </ul>
+        <ul class="col-6">
+          <li class="data">
+            <span class="item">Top Love Domain: <span class="countrie-info"> {{countrie.topLevelDomain}} </span></span>
+          </li>
+          <li class="data">
+            <span class="item">Currencies: <span class="countrie-info" *ngFor="let currencie of countrie.currencies"> {{currencie.name}} </span></span>
+          </li>
+          <li class="data">
+            <span class="item">Language: <span class="countrie-info" *ngFor="let language of countrie.languages"> {{language.name}} </span></span>
+          </li>
+        </ul>
+        <div class="row countrie-border">
+          <span class="col-3 item">Border Countries: </span>
+          <div class="col-9 row border-items" *ngIf="countrieBorders">
+              <a class="btn-border" *ngFor="let countrieBorder of countrieBorders" (click)="goPage(countrieBorder.name)" >{{ countrieBorder.name }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

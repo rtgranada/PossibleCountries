@@ -1,0 +1,10 @@
+<div app-theme>
+  <header class="main-header">
+    <div class="container">
+      <span class="where-in-the-world">Where in the world?</span>
+
+      <span class="dark-mode" (click)="toggle()"><fa-icon class="moon-icon" [icon]="faMoon"></fa-icon>{{ theme }}</span>
+    </div>
+  </header>
+  <router-outlet></router-outlet>
+</div>
